@@ -18,20 +18,32 @@
     text-align: center;
 }
 
-.quote p {
-    font-size: 36px;
-    font-weight: 300;
-    font-style: italic;
+.quote {
+    margin: 0;
+    padding: 80px 30px;
+    background-color: var(--color-secondary);
     color: var(--color-dark);
 }
 
-.quote {
-    text-align: center;
-    padding: 50px 20px;
+.quote blockquote,
+.quote figcaption {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.quote blockquote {
+.quote blockquote p {
     margin: 0;
+    font-size: 36px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.quote figcaption {
+    margin-top: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: right;
 }
 
 .pictures {
@@ -67,6 +79,10 @@
 }
 
 @media (max-width: 768px) {
+    .quote {
+        padding: 50px 20px;
+    }
+
     .hero picture {
         width: 100%;
         flex: none;

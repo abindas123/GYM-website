@@ -12,7 +12,7 @@
 
 .trainer-section .eyebrow {
     margin-bottom: 12px;
-    color: var(--color-primary);
+    color: var(--color-dark);
     font-size: 12px;
     font-weight: 800;
     letter-spacing: 1.5px;
@@ -73,7 +73,7 @@
 
 .trainer-speciality {
     margin: 0 0 10px;
-    color: var(--color-primary);
+    color: var(--color-dark);
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 1px;
@@ -90,17 +90,6 @@
     color: #4B5563;
     font-size: 15px;
     line-height: 1.7;
-}
-
-.trainer-placeholder {
-    display: flex;
-    min-height: 220px;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-dark);
-    color: var(--color-primary);
-    font-size: 64px;
-    font-weight: 800;
 }
 
 .content-note {
@@ -130,8 +119,7 @@
         flex: 1 1 40%;
     }
 
-    .trainer-card img,
-    .trainer-placeholder {
+    .trainer-card img {
         height: 190px;
         min-height: 190px;
     }
@@ -156,8 +144,7 @@
         width: 100%;
     }
 
-    .trainer-card img,
-    .trainer-placeholder {
+    .trainer-card img {
         height: 190px;
         min-height: 190px;
     }
@@ -176,15 +163,39 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 64px 24px;
 }
 
 .plans-hero p {
     color: var(--color-secondary);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.trainers-hero-image {
+    display: block;
+    flex: 0 1 480px;
+    min-width: 0;
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .trainers-hero-image {
+        flex: none;
+        align-self: center;
+    }
 }
 
 .plans-hero .eyebrow {
-    color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.plans-hero h1 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 800;
+    line-height: 1.15;
 }
 
 .plans-hero h1,
@@ -216,7 +227,6 @@
     background: var(--color-dark);
     color: var(--color-white);
     text-align: center;
-    border-top: 5px solid var(--color-primary);
 }
 
 .membership-cta > div {
@@ -224,7 +234,7 @@
 }
 
 .membership-cta .eyebrow {
-    color: var(--color-primary);
+    color: var(--color-white);
     font-weight: 800;
     letter-spacing: 1.5px;
 }
