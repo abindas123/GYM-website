@@ -12,34 +12,30 @@
     <header>
         <nav aria-label="Main navigation">
             <a href="Index.HTML" class="logo">Shark<span>GYM</span></a>
-
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="menu-icon">☰</label>
-
-            <ul>
+            <input type="checkbox" id="menu-toggle" aria-label="Toggle navigation menu" aria-controls="main-menu">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul id="main-menu">
                 <li><a href="Index.HTML">Home</a></li>
                 <li><a href="Programs.HTML">Programs</a></li>
-                <li><a href="Trainers.HTML">Trainers</a></li>
+                <li><a href="Trainers.html">Trainers</a></li>
                 <li><a href="Subscriptions.HTML" aria-current="page">Subscriptions</a></li>
-                <li><a href="Contacts.HTML">Contacts</a></li>
+                <li><a href="Contacts.HTML">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="subscriptions-page">
-        <section class="subscriptions-hero">
-            <p class="subscription-eyebrow">YOUR FITNESS JOURNEY STARTS HERE</p>
+        <section class="hero subscriptions-hero">
             <h1>Choose Your Membership</h1>
-            <p>Find the right plan for your goals, your lifestyle and your budget.</p>
-            <a class="subscription-cta" href="#plans">Explore Plans</a>
+            <p>Find a plan that fits your goals and budget.</p>
+            <form class="navigation-action" action="#plans" method="get"><button type="submit" class="subscription-cta">Explore Plans</button></form>
         </section>
 
         <section class="subscription-plans" id="plans">
-            <div class="subscription-intro">
-                <p class="subscription-eyebrow">SIMPLE. FLEXIBLE. EFFECTIVE.</p>
+            <header class="subscription-intro">
                 <h2>Membership Plans</h2>
                 <p>Choose your plan and take the next step towards a stronger you.</p>
-            </div>
+            </header>
 
             <div class="subscription-cards">
                 <article class="subscription-card">
@@ -54,7 +50,7 @@
                         <li>Changing room access</li>
                     </ul>
 
-                    <a href="Contacts.HTML" class="subscription-button">Choose Basic</a>
+                    <form class="navigation-action" action="Contacts.HTML" method="get"><button type="submit" class="subscription-button">Choose Basic</button></form>
                 </article>
 
                 <article class="subscription-card subscription-featured">
@@ -70,7 +66,7 @@
                         <li>More workout options</li>
                     </ul>
 
-                    <a href="Contacts.HTML" class="subscription-button">Choose Plus</a>
+                    <form class="navigation-action" action="Contacts.HTML" method="get"><button type="submit" class="subscription-button">Choose Plus</button></form>
                 </article>
 
                 <article class="subscription-card">
@@ -85,7 +81,7 @@
                         <li>Individual training guidance</li>
                     </ul>
 
-                    <a href="Contacts.HTML" class="subscription-button">Choose Elite</a>
+                    <form class="navigation-action" action="Contacts.HTML" method="get"><button type="submit" class="subscription-button">Choose Elite</button></form>
                 </article>
             </div>
 
@@ -97,7 +93,7 @@
         <section class="subscription-bottom">
             <h2>Need help choosing?</h2>
             <p>Meet our trainers and find the support you need to reach your fitness goals.</p>
-            <a href="Trainers.HTML" class="subscription-cta">Meet Our Trainers</a>
+            <form class="navigation-action" action="Trainers.html" method="get"><button type="submit" class="subscription-cta">Meet Our Trainers</button></form>
         </section>
     </main>
 

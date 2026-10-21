@@ -23,7 +23,7 @@ body {
     margin: 0;
 }
 
-header {
+body > header {
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -77,8 +77,13 @@ main {
 }
 
 .hero {
+    box-sizing: border-box;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--color-dark);
-    padding: 80px 30px;
+    padding: 60px 30px;
 }
 
 .hero-container {
@@ -87,6 +92,7 @@ main {
     justify-content: space-between;
     gap: 50px;
 
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -97,7 +103,8 @@ main {
 }
 
 .hero h1 {
-    font-size: 48px;
+    line-height: 1.15;
+    font-size: var(--font-hero);
     font-weight: 800;
     color: var(--color-white);
     margin: 0 0 12px;
@@ -109,7 +116,20 @@ main {
     margin: 0 0 20px;
 }
 
-.hero a {
+.navigation-action {
+    margin: 0;
+    max-width: 100%;
+}
+
+.navigation-action button {
+    font: inherit;
+    cursor: pointer;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.hero button {
+    border: 0;
     display: inline-block;
     padding: 10px 30px;
     background-color: var(--color-primary);
@@ -118,7 +138,8 @@ main {
     border-radius: 6px;
 }
 
-section a {
+.cta button,
+.primary-button {
     display: inline-block;
     padding: 12px 30px;
     background-color: var(--color-primary);
@@ -150,7 +171,7 @@ section a {
     margin: 0;
 }
 
-.cta a {
+.cta button {
     color: var(--color-white);
     text-decoration: none;
     border: 2px solid var(--color-white);
@@ -178,16 +199,13 @@ footer p {
     }
 
     .hero {
-        padding: 40px 20px;
+        min-height: 0;
+        padding: 30px 20px;
     }
 
     .hero-content {
         width: 100%;
         flex: none;
-    }
-
-    .hero h1 {
-        font-size: 36px;
     }
 
     header nav {
@@ -218,7 +236,15 @@ footer p {
         padding: 25px;
     }
 
-    .cta a {
+    .cta .navigation-action {
+        align-self: center;
+    }
+
+    .cta button {
+        max-width: 100%;
+        box-sizing: border-box;
+        white-space: normal;
+        text-align: center;
         align-self: center;
     }
 }
@@ -240,6 +266,7 @@ header a[aria-current="page"] {
 }
 
 a:focus-visible,
+button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
     outline: 3px solid var(--color-primary);
@@ -282,698 +309,6 @@ textarea:focus-visible {
         outline: 3px solid var(--color-primary);
         outline-offset: 4px;
     }
-}
-
-
-/* =========================
-   Trainers Page
-
-.trainer-section {
-    padding: 64px 24px;
-    background: var(--color-white);
-}
-
-.trainer-section .section-intro {
-    max-width: 760px;
-    margin: 0 auto 36px;
-    text-align: center;
-}
-
-.trainer-section .eyebrow {
-    margin-bottom: 12px;
-    color: var(--color-primary);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-}
-
-.trainer-section .section-intro h2 {
-    margin: 10px 0;
-    color: var(--color-dark);
-    font-size: 36px;
-}
-
-.trainer-section .section-intro > p:last-child {
-    color: #4B5563;
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-.trainer-list {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 24px;
-    max-width: 1120px;
-    margin: 0 auto;
-}
-
-.trainer-card {
-    display: flex;
-    flex: 1 1 0;
-    flex-direction: column;
-    min-width: 0;
-    overflow: hidden;
-    border-radius: 12px;
-    background: #FFFFFF;
-    box-shadow: 0 5px 18px rgba(31, 41, 55, 0.10);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.trainer-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 24px rgba(31, 41, 55, 0.15);
-}
-
-.trainer-card img {
-    display: block;
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.trainer-copy {
-    padding: 24px;
-}
-
-.trainer-speciality {
-    margin: 0 0 10px;
-    color: var(--color-primary);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.trainer-copy h3 {
-    margin: 0 0 12px;
-    color: var(--color-dark);
-    font-size: 24px;
-}
-
-.trainer-copy > p:last-child {
-    margin: 0;
-    color: #4B5563;
-    font-size: 15px;
-    line-height: 1.7;
-}
-
-.trainer-placeholder {
-    display: flex;
-    min-height: 220px;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-dark);
-    color: var(--color-primary);
-    font-size: 64px;
-    font-weight: 800;
-}
-
-.content-note {
-    max-width: 1120px;
-    margin: 20px auto 0;
-    color: #6B7280;
-    font-size: 12px;
-    text-align: center;
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-    .trainer-section {
-        padding: 48px 20px;
-    }
-
-    .trainer-section .section-intro h2 {
-        font-size: 30px;
-    }
-
-    .trainer-list {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .trainer-card {
-        flex: 1 1 40%;
-    }
-
-    .trainer-card img,
-    .trainer-placeholder {
-        height: 190px;
-        min-height: 190px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 375px) {
-    .trainer-section {
-        padding: 36px 16px;
-    }
-
-    .trainer-section .section-intro h2 {
-        font-size: 26px;
-    }
-
-    .trainer-list {
-        flex-direction: column;
-    }
-
-    .trainer-card {
-        flex: 1 1 auto;
-        width: 100%;
-    }
-
-    .trainer-card img,
-    .trainer-placeholder {
-        height: 190px;
-        min-height: 190px;
-    }
-
-    .trainer-copy {
-        padding: 20px;
-    }
-}
-
-/* Center the Trainers page hero text */
-.plans-hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 64px 24px;
-}
-
-.plans-hero h1,
-.plans-hero p {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.trainer-section .section-intro {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.trainer-section .section-intro h2,
-.trainer-section .section-intro p {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-/* =====================================
-   SHARKGYM THEME: SUBSCRIPTIONS
-   Navy + Blue + White
-
-.subscriptions-hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 70px 24px;
-    background: var(--color-dark);
-    color: var(--color-white);
-    text-align: center;
-    border-bottom: 5px solid var(--color-primary);
-}
-
-.subscriptions-hero .subscription-eyebrow {
-    color: var(--color-primary);
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-.subscriptions-hero h1 {
-    margin: 10px 0 18px;
-    color: var(--color-white);
-    font-size: 44px;
-    line-height: 1.2;
-}
-
-.subscriptions-hero > p:not(.subscription-eyebrow) {
-    max-width: 650px;
-    margin: 0 auto 28px;
-    color: var(--color-secondary);
-    font-size: 18px;
-    line-height: 1.7;
-}
-
-.subscription-cta,
-.subscription-button {
-    display: inline-block;
-    padding: 12px 24px;
-    border: 2px solid var(--color-primary);
-    border-radius: 6px;
-    background: var(--color-primary);
-    color: #FFFFFF;
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-    transition: background 0.25s ease, transform 0.25s ease;
-}
-
-.subscription-cta:hover,
-.subscription-button:hover {
-    background: transparent;
-    color: var(--color-primary);
-    transform: translateY(-2px);
-}
-
-.subscription-plans {
-    padding: 64px 24px;
-    background: #F3F6FA;
-}
-
-.subscription-intro {
-    max-width: 760px;
-    margin: 0 auto 40px;
-    text-align: center;
-}
-
-.subscription-intro .subscription-eyebrow {
-    color: var(--color-primary);
-    font-weight: 800;
-    letter-spacing: 1.5px;
-}
-
-.subscription-intro h2 {
-    margin: 10px 0;
-    color: var(--color-dark);
-    font-size: 36px;
-}
-
-.subscription-intro > p:last-child {
-    color: #566174;
-    line-height: 1.7;
-}
-
-.subscription-cards {
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    gap: 24px;
-    max-width: 1120px;
-    margin: 0 auto;
-}
-
-.subscription-card {
-    display: flex;
-    flex: 1 1 0;
-    flex-direction: column;
-    min-width: 0;
-    padding: 30px 24px;
-    border: 1px solid #DCE3EC;
-    border-top: 5px solid var(--color-dark);
-    border-radius: 12px;
-    background: #FFFFFF;
-    box-shadow: 0 6px 20px rgba(31, 41, 55, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.subscription-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 26px rgba(31, 41, 55, 0.14);
-}
-
-.subscription-card h3 {
-    margin: 0 0 12px;
-    color: var(--color-dark);
-    font-size: 26px;
-    text-align: center;
-}
-
-.subscription-description {
-    color: #566174;
-    text-align: center;
-    line-height: 1.6;
-}
-
-.subscription-price {
-    margin: 24px 0;
-    color: var(--color-primary);
-    font-size: 38px;
-    font-weight: 800;
-    text-align: center;
-}
-
-.subscription-price span {
-    color: #697386;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.subscription-card ul {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 14px;
-    margin: 0 0 28px;
-    padding-left: 22px;
-    color: #374151;
-    line-height: 1.5;
-}
-
-.subscription-card li::marker {
-    color: var(--color-primary);
-}
-
-.subscription-button {
-    display: block;
-    margin-top: auto;
-}
-
-.subscription-featured {
-    border: 2px solid var(--color-primary);
-    border-top: 5px solid var(--color-primary);
-    background: #F8FBFF;
-}
-
-.subscription-popular {
-    align-self: center;
-    margin: -30px 0 24px;
-    padding: 8px 16px;
-    border-radius: 0 0 8px 8px;
-    background: var(--color-primary);
-    color: #FFFFFF;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.subscription-note {
-    margin: 22px auto 0;
-    color: #697386;
-    font-size: 12px;
-    text-align: center;
-}
-
-/* Bottom call-to-action */
-.subscription-bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 54px 24px;
-    background: var(--color-dark);
-    color: var(--color-white);
-    text-align: center;
-}
-
-.subscription-bottom h2 {
-    margin: 0 0 14px;
-    color: var(--color-white);
-    font-size: 30px;
-}
-
-.subscription-bottom p {
-    max-width: 620px;
-    margin: 0 auto 24px;
-    color: var(--color-secondary);
-    line-height: 1.7;
-}
-
-/* =====================================
-   TRAINERS PAGE BOTTOM SECTION
-
-.membership-cta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    padding: 54px 24px;
-    background: var(--color-dark);
-    color: var(--color-white);
-    text-align: center;
-    border-top: 5px solid var(--color-primary);
-}
-
-.membership-cta > div {
-    max-width: 700px;
-}
-
-.membership-cta .eyebrow {
-    color: var(--color-primary);
-    font-weight: 800;
-    letter-spacing: 1.5px;
-}
-
-.membership-cta h2 {
-    margin: 10px 0 14px;
-    color: var(--color-white);
-    font-size: 30px;
-}
-
-.membership-cta p:not(.eyebrow) {
-    color: var(--color-secondary);
-    line-height: 1.7;
-}
-
-.membership-cta .primary-button {
-    align-self: center;
-    border: 2px solid var(--color-primary);
-    border-radius: 6px;
-    background: var(--color-primary);
-    color: #FFFFFF;
-    text-decoration: none;
-    transition: background 0.25s ease;
-}
-
-.membership-cta .primary-button:hover {
-    background: transparent;
-    color: var(--color-primary);
-}
-
-/* Shared footer */
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 18px 20px;
-    background: var(--color-dark);
-    color: var(--color-white);
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-    .subscriptions-hero {
-        padding: 52px 20px;
-    }
-
-    .subscriptions-hero h1 {
-        font-size: 36px;
-    }
-
-    .subscription-plans {
-        padding: 46px 20px;
-    }
-
-    .subscription-intro h2 {
-        font-size: 30px;
-    }
-
-    .subscription-cards {
-        flex-wrap: wrap;
-        gap: 18px;
-    }
-
-    .subscription-card {
-        flex: 1 1 40%;
-    }
-}
-
-/* Mobile */
-@media (max-width: 375px) {
-    .subscriptions-hero {
-        padding: 40px 16px;
-    }
-
-    .subscriptions-hero h1 {
-        font-size: 30px;
-    }
-
-    .subscription-plans {
-        padding: 36px 16px;
-    }
-
-    .subscription-cards {
-        flex-direction: column;
-    }
-
-    .subscription-card {
-        flex: 1 1 auto;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .membership-cta,
-    .subscription-bottom {
-        padding: 38px 16px;
-    }
-}
-
-/* =========================
-   TRAINERS FOOTER SECTION
-
-.trainer-section .content-note {
-    margin: 20px auto 0;
-    text-align: center;
-}
-
-.membership-cta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    padding: 48px 24px;
-    text-align: center;
-}
-
-.membership-cta > div {
-    max-width: 700px;
-}
-
-.membership-cta h2,
-.membership-cta p {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.membership-cta .primary-button {
-    align-self: center;
-}
-
-/* Shared footer content */
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 20px;
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-    .subscription-cards {
-        flex-wrap: wrap;
-    }
-
-    .subscription-card {
-        flex: 1 1 40%;
-    }
-}
-
-/* Mobile */
-@media (max-width: 375px) {
-    .subscriptions-hero,
-    .subscription-plans {
-        padding: 36px 16px;
-    }
-
-    .subscription-cards {
-        flex-direction: column;
-    }
-
-    .subscription-card {
-        flex: 1 1 auto;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .membership-cta {
-        padding: 36px 16px;
-    }
-}
-
-/* Fix Subscriptions hero section */
-.subscriptions-hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 65px 24px;
-    background: var(--color-dark);
-    color: var(--color-white);
-    text-align: center;
-}
-
-.subscriptions-hero .subscription-eyebrow {
-    margin: 0 0 14px;
-    color: var(--color-primary);
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-.subscriptions-hero h1 {
-    margin: 0 auto 18px;
-    color: #FFFFFF;
-    font-size: 44px;
-    line-height: 1.2;
-}
-
-.subscriptions-hero > p:not(.subscription-eyebrow) {
-    max-width: 650px;
-    margin: 0 auto 28px;
-    color: #E5E7EB;
-    font-size: 18px;
-    line-height: 1.7;
-}
-
-.subscriptions-hero .subscription-cta {
-    display: inline-block;
-    align-self: center;
-    margin: 0 auto;
-    padding: 13px 26px;
-    border: 2px solid var(--color-primary);
-    border-radius: 6px;
-    background: var(--color-primary);
-    color: #FFFFFF;
-    font-weight: 700;
-    text-decoration: none;
-    text-align: center;
-}
-
-.subscriptions-hero .subscription-cta:hover {
-    background: transparent;
-    color: #FFFFFF;
-}
-
-/* Responsive heading */
-@media (max-width: 768px) {
-    .subscriptions-hero {
-        padding: 50px 20px;
-    }
-
-    .subscriptions-hero h1 {
-        font-size: 36px;
-    }
-}
-
-@media (max-width: 375px) {
-    .subscriptions-hero {
-        padding: 40px 16px;
-    }
-
-    .subscriptions-hero h1 {
-        font-size: 30px;
-    }
-
-    .subscriptions-hero > p:not(.subscription-eyebrow) {
-        font-size: 16px;
 
     .menu-icon {
         font-size: 24px;

@@ -1,0 +1,301 @@
+/* Trainers page layout, cards and membership call to action. */
+.trainer-section {
+    padding: 64px 24px;
+    background: var(--color-white);
+}
+
+.trainer-section .section-intro {
+    max-width: 760px;
+    margin: 0 auto 36px;
+    text-align: center;
+}
+
+.trainer-section .eyebrow {
+    margin-bottom: 12px;
+    color: var(--color-dark);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.trainer-section .section-intro h2 {
+    margin: 10px 0;
+    color: var(--color-dark);
+    font-size: 36px;
+}
+
+.trainer-section .section-intro > p:last-child {
+    color: #4B5563;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.trainer-list {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.trainer-card {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #FFFFFF;
+    box-shadow: 0 5px 18px rgba(31, 41, 55, 0.10);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trainer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(31, 41, 55, 0.15);
+}
+
+.trainer-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.trainer-card .trainer-portrait {
+    object-position: center 20%;
+}
+
+.trainer-copy {
+    padding: 24px;
+}
+
+.trainer-speciality {
+    margin: 0 0 10px;
+    color: var(--color-dark);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.trainer-copy h3 {
+    margin: 0 0 12px;
+    color: var(--color-dark);
+    font-size: 24px;
+}
+
+.trainer-copy > p:last-child {
+    margin: 0;
+    color: #4B5563;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.content-note {
+    max-width: 1120px;
+    margin: 20px auto 0;
+    color: #6B7280;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .trainer-section {
+        padding: 48px 20px;
+    }
+
+    .trainer-section .section-intro h2 {
+        font-size: 30px;
+    }
+
+    .trainer-list {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .trainer-card {
+        flex: 1 1 40%;
+    }
+
+    .trainer-card img {
+        height: 190px;
+        min-height: 190px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 375px) {
+    .trainer-section {
+        padding: 36px 16px;
+    }
+
+    .trainer-section .section-intro h2 {
+        font-size: 26px;
+    }
+
+    .trainer-list {
+        flex-direction: column;
+    }
+
+    .trainer-card {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    .trainer-card img {
+        height: 190px;
+        min-height: 190px;
+    }
+
+    .trainer-copy {
+        padding: 20px;
+    }
+}
+
+/* Center the Trainers page hero text */
+.plans-hero {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.plans-hero p {
+    color: var(--color-secondary);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.trainers-hero-image {
+    display: block;
+    flex: 0 1 480px;
+    min-width: 0;
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .trainers-hero-image {
+        flex: none;
+        align-self: center;
+    }
+}
+
+.plans-hero .eyebrow {
+    color: var(--color-white);
+}
+
+.plans-hero h1 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.plans-hero h1,
+.plans-hero p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.trainer-section .section-intro {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.trainer-section .section-intro h2,
+.trainer-section .section-intro p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.membership-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 54px 24px;
+    background: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.membership-cta > div {
+    max-width: 700px;
+}
+
+.membership-cta .eyebrow {
+    color: var(--color-white);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.membership-cta h2 {
+    margin: 10px 0 14px;
+    color: var(--color-white);
+    font-size: 30px;
+}
+
+.membership-cta p:not(.eyebrow) {
+    color: var(--color-secondary);
+    line-height: 1.7;
+}
+
+.membership-cta .primary-button {
+    align-self: center;
+    border: 2px solid var(--color-primary);
+    border-radius: 6px;
+    background: var(--color-primary);
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: background 0.25s ease;
+}
+
+.membership-cta .primary-button:hover {
+    background: transparent;
+    color: var(--color-primary);
+}
+
+.trainer-section .content-note {
+    margin: 20px auto 0;
+    text-align: center;
+}
+
+.membership-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 48px 24px;
+    text-align: center;
+}
+
+.membership-cta > div {
+    max-width: 700px;
+}
+
+.membership-cta h2,
+.membership-cta p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.membership-cta .primary-button {
+    align-self: center;
+}
+
+@media (max-width: 375px) {
+    .membership-cta {
+        padding: 36px 16px;
+    }
+}

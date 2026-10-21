@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Trainers | SharkGYM</title>
+    <title>Trainers | SharkGYM</title>
     <link rel="stylesheet" href="../CSS/shared.css">
+    <link rel="stylesheet" href="../CSS/Trainers.css">
 </head>
 <body>
     <header>
         <nav aria-label="Main navigation">
-            <a href="Index.HTML" class="logo">SharkGYM</a>
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="menu-icon">☰</label>
-            <ul>
+            <a href="Index.HTML" class="logo">Shark<span>GYM</span></a>
+            <input type="checkbox" id="menu-toggle" aria-label="Toggle navigation menu" aria-controls="main-menu">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul id="main-menu">
                 <li><a href="Index.HTML">Home</a></li>
                 <li><a href="Programs.HTML">Programs</a></li>
-                <li><a href="Trainers.HTML" aria-current="page">Trainers</a></li>
+                <li><a href="Trainers.html" aria-current="page">Trainers</a></li>
                 <li><a href="Subscriptions.HTML">Subscriptions</a></li>
                 <li><a href="Contacts.HTML">Contact</a></li>
             </ul>
@@ -24,22 +25,25 @@
     </header>
 
     <main>
-        <section class="plans-hero">
-            <p class="eyebrow">MEET YOUR TEAM</p>
-            <h1>Train With the Best</h1>
-            <p>Our trainers are here to help you build strength, improve fitness and achieve your goals with confidence.</p>
+        <section class="hero plans-hero">
+            <div class="hero-container">
+                <header class="hero-content">
+                    <h1>Train With the Best</h1>
+                    <p>Expert guidance for your fitness goals.</p>
+                </header>
+                <img class="trainers-hero-image" src="../Images/pic10.png" alt="Three athletes posing and exercising in the gym">
+            </div>
         </section>
 
         <section class="trainer-section">
-            <div class="section-intro">
-                <p class="eyebrow">EXPERT GUIDANCE</p>
+            <header class="section-intro">
                 <h2>Meet Our Trainers</h2>
                 <p>Get the guidance and motivation you need at every stage of your fitness journey.</p>
-            </div>
+            </header>
 
             <div class="trainer-list">
                 <article class="trainer-card">
-                    <img src="../Images/Pic1.png" alt="Gym training environment">
+                    <img src="../Images/pic3.jpeg" alt="Personal trainer guiding an athlete through an exercise">
                     <div class="trainer-copy">
                         <p class="trainer-speciality">STRENGTH TRAINING</p>
                         <h3>Alex Morgan</h3>
@@ -48,16 +52,16 @@
                 </article>
 
                 <article class="trainer-card">
-                    <img src="../Images/Pic2.png" alt="Fitness training environment">
+                    <img src="../Images/Pic2.png" alt="Athlete lifting a barbell in the gym">
                     <div class="trainer-copy">
-                        <p class="trainer-speciality">CARDIO & ENDURANCE</p>
+                        <p class="trainer-speciality">CARDIO &amp; ENDURANCE</p>
                         <h3>Jordan Lee</h3>
                         <p>Improve endurance, increase stamina and make your fitness sessions more effective.</p>
                     </div>
                 </article>
 
                 <article class="trainer-card trainer-card-text">
-                    <div class="trainer-placeholder" aria-hidden="true">SG</div>
+                    <img class="trainer-portrait" src="../Images/pic7.jpeg" alt="Athlete lifting dumbbells in the gym">
                     <div class="trainer-copy">
                         <p class="trainer-speciality">BEGINNER FITNESS</p>
                         <h3>Sam Taylor</h3>
@@ -71,11 +75,10 @@
 
         <section class="membership-cta">
             <div>
-                <p class="eyebrow">START YOUR JOURNEY</p>
                 <h2>Ready to reach your goals?</h2>
-                <p>Find the membership that works for you and start training at SharkGYM.</p>
+                <p>Find your membership and start training.</p>
             </div>
-            <a class="primary-button" href="Subscriptions.HTML">View Memberships</a>
+            <form class="navigation-action" action="Subscriptions.HTML" method="get"><button type="submit" class="primary-button">View Memberships</button></form>
         </section>
     </main>
 

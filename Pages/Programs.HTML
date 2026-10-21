@@ -3,30 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SharkGYM - Programs</title>
+    <title>Programs | SharkGYM</title>
     <link rel="stylesheet" href="../CSS/shared.css">
     <link rel="stylesheet" href="../CSS/Programs.css">
 </head>
 <body class="content-page">
 <header>
     <nav aria-label="Main navigation">
-        <a href="Index.HTML" class="logo">Shark<span>GYM</span></a>
-        <input type="checkbox" id="menu-toggle" aria-label="Toggle navigation menu" aria-controls="main-menu">
-        <label for="menu-toggle" class="menu-icon" aria-label="Toggle navigation menu">&#9776;</label>
-        <ul id="main-menu">
-            <li><a href="Programs.HTML" aria-current="page">Programs</a></li>
-            <li><a href="Subscriptions.HTML">Subscription</a></li>
-            <li><a href="Contacts.HTML" >Contacts</a></li>
-        </ul>
-    </nav>
+            <a href="Index.HTML" class="logo">Shark<span>GYM</span></a>
+            <input type="checkbox" id="menu-toggle" aria-label="Toggle navigation menu" aria-controls="main-menu">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul id="main-menu">
+                <li><a href="Index.HTML">Home</a></li>
+                <li><a href="Programs.HTML" aria-current="page">Programs</a></li>
+                <li><a href="Trainers.html">Trainers</a></li>
+                <li><a href="Subscriptions.HTML">Subscriptions</a></li>
+                <li><a href="Contacts.HTML">Contact</a></li>
+            </ul>
+        </nav>
 </header>
 <main>
     <section class="hero" aria-labelledby="programs-title">
         <div class="hero-container">
-            <div class="hero-content">
+            <header class="hero-content">
                 <h1 id="programs-title">Find Your Perfect Workout</h1>
                 <p>From your first session to your next personal best, SharkGYM has a program to help you move forward. Find the training that fits your goals and enjoy every step of your fitness journey.</p>
-            </div>
+            </header>
         </div>
     </section>
     <section class="content-section" aria-labelledby="training-title">
@@ -34,7 +36,7 @@
         <div class="program-list">
             <article class="program-card">
                 <figure>
-                    <img src="../Images/pic7.jpeg" srcset="../Images/pic8.jpeg 2500w"
+                    <img src="../Images/pic8.jpeg" srcset="../Images/pic8.jpeg 1920w"
                         sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 257px"
                         alt="Dumbbells and weight benches in the gym" loading="lazy">
                     <figcaption>
@@ -56,9 +58,9 @@
             </article>
             <article class="program-card">
                 <figure>
-                    <img src="../Images/pic9.png" srcset="../Images/pic9.png 940w"
+                    <img src="../Images/pic9.png" srcset="../Images/pic9.png 1536w"
                         sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 257px"
-                        alt="Trainer guiding an athlete through a supported lunge" loading="lazy">
+                        alt="Athletes performing functional exercises, including battle ropes" loading="lazy">
                     <figcaption>
                         <h3>Functional Training</h3>
                         <p>Improve mobility, balance, and everyday performance. Practice controlled movements that build confidence in and out of the gym.</p>
@@ -83,7 +85,7 @@
             <h2 id="join-title">Your Next Chapter Starts Here</h2>
             <p>Find a membership that fits your goals and start training with SharkGYM.</p>
         </div>
-        <a href="Subscriptions.HTML">Explore Subscriptions</a>
+        <form class="navigation-action" action="Subscriptions.HTML" method="get"><button type="submit">Explore Subscriptions</button></form>
     </section>
 </main>
 <footer>

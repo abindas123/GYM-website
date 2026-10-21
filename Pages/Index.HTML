@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SharkGYM - Home Page</title>
+    <title>Home | SharkGYM</title>
 
     <link rel="stylesheet" href="../CSS/shared.css">
     <link rel="stylesheet" href="../CSS/Index.css">
@@ -13,45 +13,41 @@
 <body>
     <header>
         <nav aria-label="Main navigation">
-            <a href="index.html" class="logo">
-                Shark<span>GYM</span>
-            </a>
-
-            <input type="checkbox" id="menu-toggle">
-
-            <label for="menu-toggle" class="menu-icon">
-                ☰
-            </label>
-
-            <ul>
-                <li><a href="programs.html">Programs</a></li>
-                <li><a href="subscriptions.HTML">Subscription</a></li>
-                <li><a href="Contacts.HTML">Contacts</a></li>
+            <a href="Index.HTML" class="logo">Shark<span>GYM</span></a>
+            <input type="checkbox" id="menu-toggle" aria-label="Toggle navigation menu" aria-controls="main-menu">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul id="main-menu">
+                <li><a href="Index.HTML" aria-current="page">Home</a></li>
+                <li><a href="Programs.HTML">Programs</a></li>
+                <li><a href="Trainers.html">Trainers</a></li>
+                <li><a href="Subscriptions.HTML">Subscriptions</a></li>
+                <li><a href="Contacts.HTML">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-            <section class="hero">
+            <section class="hero" aria-labelledby="home-title">
                 <div class="hero-container">
-                    <div class="hero-content">
-                        <h1>Unleash Your Potential</h1>
+                    <header class="hero-content">
+                        <h1 id="home-title">Unleash Your Potential</h1>
 
                         <p>
                             Push your limits, build your strength,
                             and become the best version of yourself.
                             Your fitness journey starts at SharkGYM.
                         </p>
-                    </div>
+                        <form class="navigation-action" action="Subscriptions.HTML" method="get"><button type="submit">Join Now</button></form>
+                    </header>
 
                     <picture>
                         <source
                             media="(max-width: 768px)"
-                            srcset="../images/pic2.png"
+                            srcset="../Images/Pic2.png"
                         >
 
                         <img
-                            src="../images/pic2.png"
+                            src="../Images/Pic2.png"
                             alt="Athlete training at SharkGYM"
                         >
                     </picture>
@@ -65,7 +61,7 @@
             <div class="pictures">
                 <figure>
                     <img
-                        src="../images/pic4.jpeg"
+                        src="../Images/pic4.jpeg"
                         alt="Gym equipment"
                     >
                     <figcaption>
@@ -79,7 +75,7 @@
 
                 <figure>
                     <img
-                        src="../images/pic3.jpeg"
+                        src="../Images/pic3.jpeg"
                         alt="Personal trainer"
                     >
                     <figcaption>
@@ -93,7 +89,7 @@
 
                 <figure>
                     <img
-                        src="../images/pic5.jpeg"
+                        src="../Images/pic5.jpeg"
                         alt="Group training"
                     >
                     <figcaption>
@@ -107,7 +103,7 @@
 
                 <figure>
                     <img
-                        src="../images/pic6.jpeg"
+                        src="../Images/pic6.jpeg"
                         alt="Gym community"
                     >
                     <figcaption>
@@ -122,15 +118,15 @@
         </section>
 
         <!-- Quote Section -->
-        <section class="quote">
+        <figure class="quote">
             <blockquote>
                 <p>
-                    The only bad workout is the one
-                    that never happened.
+                    "The only bad workout is the one
+                    that never happened."
                 </p>
             </blockquote>
-            <p>— SharkGYM Team</p>
-        </section>
+            <figcaption>— SharkGYM Team</figcaption>
+        </figure>
 
         <!-- Call to Action Section -->
         <section class="cta">
@@ -142,7 +138,7 @@
                 </p>
             </div>
 
-            <a href="subscriptions.HTML">Join Now</a>
+            <form class="navigation-action" action="Subscriptions.HTML" method="get"><button type="submit">Join Now</button></form>
         </section>
     </main>
 
